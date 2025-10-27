@@ -6,53 +6,72 @@
 }
 
 body {
-  background-color: #fff;
-  color: #111;
+  background: #fff;
+  color: #222;
 }
 
-header {
+/* HEADER */
+.header {
   width: 100%;
-  padding: 20px 80px;
+  padding: 20px 60px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  background-color: #fff;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  align-items: center;
+  background: #fff;
   position: sticky;
   top: 0;
-  z-index: 1000;
 }
 
 .logo {
-  font-size: 1.6em;
-  font-weight: 600;
-  color: #111;
-  letter-spacing: 0.5px;
-}
-
-.navbar {
-  display: flex;
-  gap: 35px;
+  font-size: 26px;
+  font-weight: 700;
 }
 
 .navbar a {
+  margin-left: 30px;
   text-decoration: none;
   color: #111;
   font-weight: 500;
-  transition: color 0.3s ease;
 }
 
 .navbar a:hover {
-  color: #e27d85; 
+  color: #e58fa4;
 }
 
-.search-icon i {
-  font-size: 18px;
-  color: #111;
-  cursor: pointer;
-  transition: color 0.3s ease;
+/* HERO SECTION */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 80px 60px;
+  background: #fefefe;
 }
 
-.search-icon i:hover {
-  color: #e27d85;
+.hero-text {
+  max-width: 45%;
+}
+
+.hero-text h1 {
+  font-size: 60px;
+  line-height: 1.2;
+  margin-bottom: 30px;
+}
+
+.btn {
+  background-color: #e58fa4;
+  color: white;
+  text-decoration: none;
+  padding: 14px 30px;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background-color: #d6748d;
+}
+
+.hero-image img {
+  width: 450px;
+  border-radius: 8px;
 }
