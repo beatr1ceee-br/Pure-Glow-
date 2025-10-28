@@ -1,3 +1,4 @@
+
 * {
   margin: 0;
   padding: 0;
@@ -20,6 +21,8 @@ body {
   background: #fff;
   position: sticky;
   top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
 .logo {
@@ -32,6 +35,7 @@ body {
   text-decoration: none;
   color: #111;
   font-weight: 500;
+  transition: color 0.3s;
 }
 
 .navbar a:hover {
@@ -57,6 +61,52 @@ body {
   margin-bottom: 30px;
 }
 
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 0;
+  background-color: #fff;
+}
+
+.hero-image {
+  position: relative;
+  width: 80%;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.hero-image img {
+  width: 100%;
+  display: block;
+  border-radius: 20px;
+  filter: brightness(70%);
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-align: center;
+  max-width: 600px;
+}
+
+.hero-text h1 {
+  font-size: 50px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 0 4px 8px rgba(0,0,0,0.4);
+}
+
+.hero-text p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  text-shadow: 0 3px 6px rgba(0,0,0,0.3);
+}
+
 .btn {
   background-color: #e58fa4;
   color: white;
@@ -74,4 +124,77 @@ body {
 .hero-image img {
   width: 450px;
   border-radius: 8px;
+}
+
+.new-products {
+  text-align: center;
+  padding: 100px 60px;
+  background-color: #fff;
+}
+
+.new-products h2 {
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 50px;
+  color: #222;
+  position: relative;
+}
+
+.new-products h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background-color: #e58fa4;
+  margin: 15px auto 0;
+  border-radius: 2px;
+}
+
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  justify-items: center;
+}
+
+.product-card {
+  background-color: #fdfdfd;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 20px;
+  width: 250px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  transition: transform 0.4s ease;
+}
+
+.product-card:hover img {
+  transform: scale(1.05);
+}
+
+.product-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.product-card p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.product-card .btn {
+  padding: 10px 20px;
+  font-size: 14px;
 }
