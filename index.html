@@ -17,17 +17,17 @@
   <header class="header">
     <div class="logo">Pure Glow</div>
     <nav class="navbar">
-      <a href="#">Home</a>
-      <a href="#">Shop</a>
-      <a href="#">About</a>
-      <a href="#">Contact</a>
+      <a href="#hero-id">Home</a>
+      <a href="#new-products-id">Shop</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
       <a href="#" class="search-icon">🔍</a>
     </nav>
      <button id="theme-toggle" class="theme-toggle">🌙</button>
   </header>
 
   <!-- HERO SECTION -->
-  <section class="hero">
+  <section class="hero" id="hero-id">
     <div class="hero-image">
       <img src="makeup-artist.webp" alt="Hero Image">
       <div class="hero-text">
@@ -40,7 +40,7 @@
   </section>
 
   <!-- NEW PRODUCTS SECTION -->
-  <section class="new-products">
+  <section class="new-products" id="new-products-id">
     <h2>New Products</h2>
     <div class="products-container">
 
@@ -94,6 +94,48 @@
         </div>
     </div>
 </section>
+
+<section id="about" class="about-section">
+    <div class="about-content">
+        <h2>About Us</h2>
+        <p>
+            Welcome to Pure Glow, your destination for premium fragrances crafted to inspire, 
+            elevate, and express your true essence. 
+        </p>
+
+        <p>
+            Our mission is to deliver high-quality perfumes that blend artistry with emotion. 
+            Each fragrance is designed with care, elegance, and modern sophistication.
+        </p>
+
+    </div>
+</section>
+
+<section id="contact" class="contact-section">
+    <h2>Contact Us</h2>
+
+    <p class="contact-intro">
+        Have questions or need assistance? We're here to help!  
+        Send us a message and we’ll get back to you as soon as possible.
+    </p>
+
+    <form class="contact-form">
+        <div class="form-group">
+            <input type="text" placeholder="Your Name" required>
+        </div>
+
+        <div class="form-group">
+            <input type="email" placeholder="Your Email" required>
+        </div>
+
+        <div class="form-group">
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+        </div>
+
+        <button type="submit" class="btn">Send Message</button>
+    </form>
+</section>
+
 <script src="script.js"></script>
 </body>
 

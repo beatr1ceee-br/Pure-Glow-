@@ -115,7 +115,7 @@ body {
   font-size: 36px;
   font-weight: 600;
   margin-bottom: 50px;
-  color: #222;
+  color: black;
   position: relative;
 }
 
@@ -217,7 +217,12 @@ body.dark .hero {
 }
 
 body.dark .new-products {
-  background-color: #1a1a1a;
+  background-color:#1a1a1a;
+ 
+}
+
+body.dark .new-products h2 {
+  color: white;
 }
 
 body.dark .product-card {
@@ -277,6 +282,160 @@ body.dark .btn:hover {
 .category-box:hover {
     transform: translateY(-5px);
     box-shadow: 0px 6px 30px rgba(0,0,0,0.15);
+}
+
+/* === DARK MODE – FEATURED CATEGORIES === */
+
+body.dark .featured-categories {
+    background-color: #1a1a1a;
+}
+
+body.dark .featured-categories h2 {
+    color: #f1f1f1;
+}
+
+body.dark .category-box {
+    background: #2a2a2a;
+    box-shadow: 0px 4px 25px rgba(255,255,255,0.05);
+    border: 1px solid #444;
+}
+
+body.dark .category-box p {
+    color: #f1f1f1;
+}
+
+body.dark .category-box:hover {
+    box-shadow: 0px 6px 30px rgba(255,255,255,0.10);
+    transform: translateY(-5px);
+}
+
+.about-section {
+    padding: 80px 60px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.about-section h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: #222;
+    position: relative;
+}
+
+.about-section h2::after {
+    content: "";
+    width: 80px;
+    height: 3px;
+    background-color: #e58fa4;
+    display: block;
+    margin: 12px auto 0;
+    border-radius: 2px;
+}
+
+.about-section p {
+    max-width: 800px;
+    margin: 15px auto;
+    font-size: 18px;
+    color: #444;
+    line-height: 1.7;
+}
+
+/* DARK MODE */
+body.dark .about-section {
+    background-color: #1a1a1a;
+}
+
+body.dark .about-section h2 {
+    color: #f1f1f1;
+}
+
+body.dark .about-section p {
+    color: #ddd;
+}
+
+/* CONTACT US SECTION */
+.contact-section {
+    padding: 80px 60px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #222;
+    position: relative;
+}
+
+.contact-section h2::after {
+    content: "";
+    width: 80px;
+    height: 3px;
+    background-color: #e58fa4;
+    display: block;
+    margin: 12px auto 0;
+    border-radius: 2px;
+}
+
+.contact-intro {
+    font-size: 18px;
+    color: #444;
+    margin-bottom: 40px;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #e58fa4;
+}
+
+/* Button already styled from .btn */
+
+/* DARK MODE */
+body.dark .contact-section {
+    background-color: #1a1a1a;
+}
+
+body.dark .contact-section h2 {
+    color: #f1f1f1;
+}
+
+body.dark .contact-intro {
+    color: #ccc;
+}
+
+body.dark .contact-form input,
+body.dark .contact-form textarea {
+    background-color: #2a2a2a;
+    border: 1px solid #555;
+    color: #f1f1f1;
+}
+
+body.dark .contact-form input::placeholder,
+body.dark .contact-form textarea::placeholder {
+    color: #bbb;
 }
 
 
