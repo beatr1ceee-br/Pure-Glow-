@@ -1,0 +1,10 @@
+{
+  "hero": {
+    "image": "makeup-artist.webp",
+    "title": "Beauty Made Easy",
+    "description": "Discover our collection of skincare and makeup products designed to make you glow naturally every day."
+  },
+  "sections": {
+    "newProducts": "New Products"
+  }
+}
