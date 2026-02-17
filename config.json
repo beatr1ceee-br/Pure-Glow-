@@ -4,7 +4,28 @@
     "title": "Beauty Made Easy",
     "description": "Discover our collection of skincare and makeup products designed to make you glow naturally every day."
   },
-  "sections": {
-    "newProducts": "New Products"
+  "newProducts": {
+    "sectionTitle": "New Products",
+    "items": [
+      { "img": "pupa 2.jpg", "name": "Pupa Luminys Silky Baked Face Powder", "price": "391 MDL" },
+      { "img": "CHANEL 2.jpg", "name": "Chanel Les Beiges Eau De Teint", "price": "1267 MDL" },
+      { "img": "DIOR 3.jpg", "name": "Dior Backstage Glow Face Palette Highlight&Blush", "price": "1537 MDL" },
+      { "img": "FENTY 4.jpg", "name": "Fenty Beauty By Rihanna Diamond Bomb All-Over Veil", "price": "1223 MDL" }
+    ]
+  },
+  "categories": {
+    "sectionTitle": "FEATURED CATEGORIES",
+    "items": [
+      { "img": "eye.jpeg", "name": "Maybelline Superlock Brow Glue Tinted" },
+      { "img": "lip oil.jpeg", "name": "Yves Saint Laurent Loveshine Plumping Lip Oil Gloss" },
+      { "img": "bobbi.avif", "name": "Bobbi Brown Vitamin Enriched Face Base" }
+    ]
+  },
+  "about": {
+    "title": "About Us",
+    "paragraphs": [
+      "Welcome to Pure Glow, your destination for premium fragrances crafted to inspire, elevate, and express your true essence.",
+      "Our mission is to deliver high-quality perfumes that blend artistry with emotion. Each fragrance is designed with care, elegance, and modern sophistication."
+    ]
   }
 }

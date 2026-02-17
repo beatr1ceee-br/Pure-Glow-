@@ -1,19 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Pure Glow</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-  <!-- HEADER -->
   <header class="header">
     <div class="logo">Pure Glow</div>
     <nav class="navbar">
@@ -21,121 +16,34 @@
       <a href="#new-products-id">Shop</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
-      <a href="#" class="search-icon">🔍</a>
     </nav>
-     <button id="theme-toggle" class="theme-toggle">🌙</button>
+    <button id="theme-toggle" class="theme-toggle">🌙</button>
   </header>
 
-  <!-- HERO SECTION -->
-  <section class="hero" id="hero-id">
-    <div class="hero-image">
-      <img id="hero-img" src="" alt="Hero Image">
-      <div class="hero-text">
-        <h1 id="hero-title"></h1>
-        <p id="hero-desc"></p>
-        <a href="#" class="btn">Shop Now</a>
-      </div>
-    </div>
-  </section>
+  <section class="hero" id="hero-id"></section>
 
-  <!-- NEW PRODUCTS SECTION -->
   <section class="new-products" id="new-products-id">
-   <h2 id="main-title"></h2>
-    <div class="products-container">
-
-      <div class="product-card">
-        <img src="pupa 2.jpg" alt="Pupa Luminys Silky Baked Face Powder">
-        <h3>Pupa Luminys Silky Baked Face Powder</h3>
-        <p>391 MDL</p>
-        <a href="#" class="btn">Shop Now</a>
-      </div>
-
-      <div class="product-card">
-        <img src="CHANEL 2.jpg" alt="Chanel Les Beiges Eau De Teint">
-        <h3>Chanel Les Beiges Eau De Teint</h3>
-        <p>1267 MDL</p>
-        <a href="#" class="btn">Shop Now</a>
-      </div>
-
-      <div class="product-card">
-        <img src="DIOR 3.jpg" alt="Dior Backstage Glow Face Palette Highlight&Blush">
-        <h3>Dior Backstage Glow Face Palette Highlight&Blush</h3>
-        <p>1537 MDL</p>
-        <a href="#" class="btn">Shop Now</a>
-      </div>
-
-      <div class="product-card">
-        <img src="FENTY 4.jpg" alt="Fenty Beauty By Rihanna Diamond Bomb All-Over Veil">
-        <h3>Fenty Beauty By Rihanna Diamond Bomb All-Over Veil</h3>
-        <p>1223 MDL</p>
-        <a href="#" class="btn">Shop Now</a>
-      </div>
-
-    </div>
+    <h2 id="products-title"></h2>
+    <div class="products-container" id="products-list"></div>
   </section>
-  <section class="featured-categories">
-    <h2>FEATURED CATEGORIES</h2>
 
-    <div class="categories-container">
-        <div class="category-box">
-            <img src="eye.jpeg" alt="Eyes Products">
-            <p>Maybelline Superlock Brow Glue Tinted</p>
-        </div>
+  <section class="featured-categories" id="categories-id">
+    <h2 id="categories-title"></h2>
+    <div class="categories-container" id="categories-list"></div>
+  </section>
 
-        <div class="category-box">
-            <img src="lip oil.jpeg" alt="Lips Products">
-            <p>Yves Saint Laurent Loveshine Plumping Lip Oil Gloss</p>
-        </div>
+  <section id="about" class="about-section"></section>
 
-        <div class="category-box">
-            <img src="bobbi.avif" alt="Face Products">
-            <p>Bobbi Brown Vitamin Enriched Face Base</p>
-        </div>
-    </div>
-</section>
-
-<section id="about" class="about-section">
-    <div class="about-content">
-        <h2>About Us</h2>
-        <p>
-            Welcome to Pure Glow, your destination for premium fragrances crafted to inspire, 
-            elevate, and express your true essence. 
-        </p>
-
-        <p>
-            Our mission is to deliver high-quality perfumes that blend artistry with emotion. 
-            Each fragrance is designed with care, elegance, and modern sophistication.
-        </p>
-
-    </div>
-</section>
-
-<section id="contact" class="contact-section">
+  <section id="contact" class="contact-section">
     <h2>Contact Us</h2>
-
-    <p class="contact-intro">
-        Have questions or need assistance? We're here to help!  
-        Send us a message and we’ll get back to you as soon as possible.
-    </p>
-
     <form class="contact-form">
-        <div class="form-group">
-            <input type="text" placeholder="Your Name" required>
-        </div>
-
-        <div class="form-group">
-            <input type="email" placeholder="Your Email" required>
-        </div>
-
-        <div class="form-group">
-            <textarea placeholder="Your Message" rows="5" required></textarea>
-        </div>
-
-        <button type="submit" class="btn">Send Message</button>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
     </form>
-</section>
+  </section>
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
-
 </html>

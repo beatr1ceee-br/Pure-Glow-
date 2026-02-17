@@ -1,34 +1,60 @@
 const toggleBtn = document.getElementById('theme-toggle');
-const body = document.body;
-
 toggleBtn.addEventListener('click', () => {
-  body.classList.toggle('dark');
-  toggleBtn.textContent = body.classList.contains('dark') ? '☀️' : '🌙';
+  document.body.classList.toggle('dark');
+  toggleBtn.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
 });
 
-async function loadConfig() {
+async function loadSite() {
   try {
-
     const response = await fetch('config.json');
     const data = await response.json();
 
-    const heroImg = document.getElementById('hero-img');
-    const heroTitle = document.getElementById('hero-title');
-    const heroDesc = document.getElementById('hero-desc');
+    // 1. HERO SECTION
+    document.getElementById('hero-id').innerHTML = `
+      <div class="hero-image">
+        <img src="${data.hero.image}" alt="Hero Image">
+        <div class="hero-text">
+          <h1>${data.hero.title}</h1>
+          <p>${data.hero.description}</p>
+          <a href="#" class="btn">Shop Now</a>
+        </div>
+      </div>`;
 
-    if (heroImg) heroImg.src = data.hero.image;
-    if (heroTitle) heroTitle.textContent = data.hero.title;
-    if (heroDesc) heroDesc.textContent = data.hero.description;
+    // 2. NEW PRODUCTS
+    document.getElementById('products-title').textContent = data.newProducts.sectionTitle;
+    const productsList = document.getElementById('products-list');
+    data.newProducts.items.forEach(p => {
+      productsList.innerHTML += `
+        <div class="product-card">
+          <img src="${p.img}" alt="${p.name}">
+          <h3>${p.name}</h3>
+          <p>${p.price}</p>
+          <a href="#" class="btn">Shop Now</a>
+        </div>`;
+    });
 
-    const titleElement = document.getElementById('main-title');
-    if (titleElement) {
-      titleElement.textContent = data.sections.newProducts;
-    }
+    // 3. CATEGORIES
+    document.getElementById('categories-title').textContent = data.categories.sectionTitle;
+    const categoriesList = document.getElementById('categories-list');
+    data.categories.items.forEach(c => {
+      categoriesList.innerHTML += `
+        <div class="category-box">
+          <img src="${c.img}" alt="${c.name}">
+          <p>${c.name}</p>
+        </div>`;
+    });
 
-    console.log("Configurația a fost încărcată cu succes!");
-  } catch (error) {
-    console.error("Nu am putut încărca fișierul JSON:", error);
+    // 4. ABOUT SECTION
+    const aboutSection = document.getElementById('about');
+    aboutSection.innerHTML = `
+      <div class="about-content">
+        <h2>${data.about.title}</h2>
+        ${data.about.paragraphs.map(p => `<p>${p}</p>`).join('')}
+      </div>`;
+
+  } catch (err) {
+    console.error("Nu am putut încărca datele:", err);
   }
 }
 
-loadConfig();
+loadSite();
