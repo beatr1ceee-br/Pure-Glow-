@@ -58,3 +58,25 @@ async function loadSite() {
 }
 
 loadSite();
+// Așteptăm ca DOM-ul să fie încărcat
+document.addEventListener('submit', function(e) {
+  if (e.target.classList.contains('contact-form')) {
+    e.preventDefault(); // Oprește reîncărcarea paginii
+
+    // Creăm elementul pentru alertă
+    const alertOverlay = document.createElement('div');
+    alertOverlay.className = 'custom-alert-overlay';
+    alertOverlay.innerHTML = `
+      <div class="custom-alert-box">
+        <h3>Message Sent!</h3>
+        <p>Thank you for reaching out to Pure Glow. We will get back to you soon.</p>
+        <button class="btn" onclick="this.parentElement.parentElement.remove()">Close</button>
+      </div>
+    `;
+
+    document.body.appendChild(alertOverlay);
+    
+    // Resetăm formularul
+    e.target.reset();
+  }
+});
