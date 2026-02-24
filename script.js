@@ -58,10 +58,16 @@ async function loadSite() {
 }
 
 loadSite();
-// Așteptăm ca DOM-ul să fie încărcat
 document.addEventListener('submit', function(e) {
   if (e.target.classList.contains('contact-form')) {
-    e.preventDefault(); // Oprește reîncărcarea paginii
+    e.preventDefault();
+
+    // Creăm un obiect FormData din formularul trimis
+    const formData = new FormData(e.target);
+    
+    // Luăm valorile folosind atributele "name" setate în HTML
+    const name = formData.get('user_name');
+    const email = formData.get('user_email'); 
 
     // Creăm elementul pentru alertă
     const alertOverlay = document.createElement('div');
@@ -69,14 +75,16 @@ document.addEventListener('submit', function(e) {
     alertOverlay.innerHTML = `
       <div class="custom-alert-box">
         <h3>Message Sent!</h3>
-        <p>Thank you for reaching out to Pure Glow. We will get back to you soon.</p>
+        <p>Hello <strong>${name}</strong>,</p>
+        <p>We've sent a confirmation to: <br> 
+           <span style="color: #d4a373;">${email}</span></p>
         <button class="btn" onclick="this.parentElement.parentElement.remove()">Close</button>
       </div>
     `;
 
     document.body.appendChild(alertOverlay);
     
-    // Resetăm formularul
+    // Resetăm câmpurile formularului
     e.target.reset();
   }
 });
