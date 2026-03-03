@@ -97,9 +97,6 @@ async function loadSite() {
 // Apelăm funcția de încărcare a site-ului
 loadSite();
 
-/**
- * LOGICĂ PENTRU FORMULARUL DE CONTACT
- */
 document.addEventListener('submit', function(e) {
   if (e.target.classList.contains('contact-form')) {
     e.preventDefault();
@@ -107,6 +104,19 @@ document.addEventListener('submit', function(e) {
     const formData = new FormData(e.target);
     const name = formData.get('user_name');
     const email = formData.get('user_email'); 
+
+    // --- LOGICA DE SALVARE ÎN LOCAL STORAGE ---
+    // Creăm un obiect cu datele transmise
+    const contactData = {
+      nume: name,
+      email: email,
+      dataTrimitere: new Date().toLocaleString()
+    };
+
+    // Salvăm obiectul sub cheia "last_contact"
+    // Folosim JSON.stringify pentru că LocalStorage știe să salveze doar text
+    localStorage.setItem("last_contact", JSON.stringify(contactData));
+    // ------------------------------------------
 
     const alertOverlay = document.createElement('div');
     alertOverlay.className = 'custom-alert-overlay';
@@ -116,6 +126,7 @@ document.addEventListener('submit', function(e) {
         <p>Hello <strong>${name}</strong>,</p>
         <p>We've sent a confirmation to: <br> 
            <span style="color: #d4a373;">${email}</span></p>
+        <p style="font-size: 12px; color: #888; margin-top: 10px;">Datele tale au fost salvate local în browser.</p>
         <button class="btn" onclick="this.parentElement.parentElement.remove()">Close</button>
       </div>
     `;
