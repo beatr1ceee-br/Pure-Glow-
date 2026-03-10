@@ -33,14 +33,20 @@
   </section>
 
   <section id="about" class="about-section"></section>
-
-  <section id="contact" class="contact-section">
+  
+ <section id="contact" class="contact-section">
   <h2>Contact Us</h2>
   <form class="contact-form">
+    <div class="form-group">
+      <select name="user_gender" id="user_gender" required>
+        <option value="" disabled selected>Select Gender</option>
+        <option value="Doamna">Doamna</option>
+        <option value="Domnul">Domnul</option>
+      </select>
+    </div>
+
     <input type="text" name="user_name" placeholder="Your Name" required>
-    
     <input type="email" name="user_email" placeholder="Your Email" required>
-    
     <textarea name="user_message" placeholder="Your Message" rows="5" required></textarea>
     
     <button type="submit" class="btn">Send Message</button>

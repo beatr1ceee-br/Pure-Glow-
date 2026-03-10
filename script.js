@@ -102,31 +102,33 @@ document.addEventListener('submit', function(e) {
     e.preventDefault();
 
     const formData = new FormData(e.target);
-    const name = formData.get('user_name');
+    
+    // Extragem genul (Doamna/Domnul) și numele
+    const gender = formData.get('user_gender'); 
+    const rawName = formData.get('user_name');
+    
+    // Cream numele complet (ex: "Doamna Maria")
+    const fullNameWithTitle = `${gender} ${rawName}`;
     const email = formData.get('user_email'); 
 
-    // --- LOGICA DE SALVARE ÎN LOCAL STORAGE ---
-    // Creăm un obiect cu datele transmise
+    // Salvarea în Local Storage (în tabelul de sub "Application")
     const contactData = {
-      nume: name,
+      nume: fullNameWithTitle,
       email: email,
       dataTrimitere: new Date().toLocaleString()
     };
 
-    // Salvăm obiectul sub cheia "last_contact"
-    // Folosim JSON.stringify pentru că LocalStorage știe să salveze doar text
     localStorage.setItem("last_contact", JSON.stringify(contactData));
-    // ------------------------------------------
 
+    // Mesajul de alertă care apare pe ecran
     const alertOverlay = document.createElement('div');
     alertOverlay.className = 'custom-alert-overlay';
     alertOverlay.innerHTML = `
       <div class="custom-alert-box">
         <h3>Message Sent!</h3>
-        <p>Hello <strong>${name}</strong>,</p>
+        <p>Hello <strong>${fullNameWithTitle}</strong>,</p>
         <p>We've sent a confirmation to: <br> 
            <span style="color: #d4a373;">${email}</span></p>
-        <p style="font-size: 12px; color: #888; margin-top: 10px;">Datele tale au fost salvate local în browser.</p>
         <button class="btn" onclick="this.parentElement.parentElement.remove()">Close</button>
       </div>
     `;
